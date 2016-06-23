@@ -1,8 +1,8 @@
 module.exports = app => {
 
-    const homeController = require('../controllers/homeController')();
+    const homeController = require( '../controllers/homeController' )();
 
-    app.get('/', homeController.getList);
+    app.get( '/', homeController.getList );
 
     return app;
 };

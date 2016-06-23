@@ -20,5 +20,9 @@
     "debug": "^2.2.0",
     "express": "^4.14.0",
     "newrelic": "^1.28.1"
+  },
+  "devDependencies": {
+    "eslint": "^2.13.1",
+    "eslint-config-prodest": "git+https://github.com/prodest/eslint-config-prodest.git"
   }
 }
