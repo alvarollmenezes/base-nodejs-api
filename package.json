@@ -23,6 +23,6 @@
   },
   "devDependencies": {
     "eslint": "^2.13.1",
-    "eslint-config-prodest": "git+https://github.com/prodest/eslint-config-prodest.git"
+    "eslint-config-prodest": "^1.0.12"
   }
 }
