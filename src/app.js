@@ -1,4 +1,5 @@
 const config = require( './config/app' );
+const cors = require( 'cors' );
 
 if ( config.env === 'production' ) {
     require( 'newrelic' );
@@ -9,14 +10,11 @@ const compress = require( 'compression' );
 
 let app = express();
 
-app.use( compress() );
+// Cors is full enabled
+app.use( cors() );
 
-// Enable CORS http://enable-cors.org/server_expressjs.html
-app.use( ( req, res, next ) => {
-    res.header( 'Access-Control-Allow-Origin', '*' );
-    res.header( 'Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept' );
-    next();
-} );
+// Compress responses
+app.use( compress() );
 
 // load our routes
 app = require( './routes/home' )( app );
@@ -55,9 +53,9 @@ app.use( ( err, req, res, next ) => {
     } );
 } );
 
-var pathApp = express();
+let pathApp = express();
 
-let path = config.path;
+const path = config.path;
 pathApp.use( path, app );
 
 module.exports = pathApp;

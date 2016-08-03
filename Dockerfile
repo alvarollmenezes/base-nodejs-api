@@ -12,4 +12,4 @@ ENV PORT 4242
 
 EXPOSE 4242
 
-CMD ["npm", "start"]
+CMD ["node", "src/bin/www"]
